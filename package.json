@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tmalenga/14-Blog_About_Tech/issues"
   },
-  "homepage": "https://github.com/tmalenga/14-Blog_About_Tech#readme"
+  "homepage": "https://github.com/tmalenga/14-Blog_About_Tech#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
