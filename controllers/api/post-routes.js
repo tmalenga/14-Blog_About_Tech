@@ -84,6 +84,48 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        title: req.body.title,
+        post_text: req.body.post_text
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+    })
+    .then(PostData => {
+        if (!PostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(PostData);
+    })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.delete('/:id', withAuth, (req, res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id 
+        }
+    })
+    .then(PostData => {
+        if (!PostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(PostData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 
 
 module.exports = router;
