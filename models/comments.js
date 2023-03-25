@@ -39,4 +39,4 @@ Comments.init({
  }
  );
 
- model.exports = Comments;
+ module.exports = Comments;
