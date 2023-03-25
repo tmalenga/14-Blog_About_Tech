@@ -1,3 +1,5 @@
+// temp code - to be updated to allow for upload to Heroku!!!! (I think)
+
 require('dotenv').config();
 
 const Sequelize = require('sequelize');
