@@ -1,0 +1,26 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Created by {{user.username}}</p>
+
+</div>
+  <h4>There are {{comments.length}} comments on this blog.</h4>
+{{#if comments.length}}
+<div class="commentSection">
+  {{#each comments as |comment|}}
+  <h6>{{comment.user.username}}:</h6>
+  <p>{{comment.content}}</p>
+    {{/each}}
+</div>
+{{/if}}
+
+{{#if logged_in}}
+<div class="form-group">
+  <textarea data-id="{{id}}" id="comment{{id}}" name="post-content"></textarea>
+</div>
+  <button type="submit" data-id="{{id}}" class="btn btn-primary" id="commentButton">Add Comment</button>
+{{else}}
+  <p> <a href="/login">Login to leave a comment</a></p>
+{{/if}}
+
+<script src="/public/post.js"></script>

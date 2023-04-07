@@ -1,42 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Let's Talk_Tech</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  <title>Tech Talk</title>
 </head>
-
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <p class="blog-title">Let's Talk_Tech</p>
-      </h1>
-    
-    <nav>
-    {{#if loggedIn}}
-    <a href="/" class="homepage">Homepage</a>
-    <a href="/dashboard">Dashboard</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/" class="homepage">Homepage</a>
-    <a href="/login">Login</a>
-    {{/if}}
-    </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-  </div>
+  <header>
+    <h1><a href="/">Let's Talk_Tech</a></h1>
+    <ul>
+      <li><a href="/">Home</a></li>
+      {{#if logged_in}}
+      <li><a href="/" id="logout">Logout</a></li>
+      {{else}}
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Sign Up</a></li> 
+      {{/if}}
+    </ul>
+  </header>
+  <main>
+    {{{ body }}}
+  </main>
 
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
-
+  {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
-
 </html>

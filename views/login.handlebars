@@ -1,17 +1,17 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">Email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">Password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">Login</button>
-  </div>
-  <div class ="sign-up">
-      Not a member? <a href="/signup">Sign up here</a>
-  </div>
+<h2>Login</h2>
 
-  <script src="/javascript/login.js"></script>
+<form class="form login-form" id="loginSignUpForms">
+  <div class="mb-3">
+    <label for="username-login" class="form-label">Username:</label>
+    <input class="form-control" for="username-login" type="username" id="username-login" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Please enter the username associated with your account</div>
+  </div>
+  <div class="mb-3">
+    <label for="password-login" class="form-label">Password:</label>
+    <input class="form-control" type="password" id="password-login">
+  </div>
+  <button class="btn btn-primary" id="loginBtn" type="submit">Login</button>
+  <span id="signup-prompt">Don't have an account? <a id="signup-promptBtn2" href="/signUp">Sign Up Here</a></span>
+</form>
+
+<script src="/public/login.js"></script>
