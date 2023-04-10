@@ -29,7 +29,7 @@ router.get('/signup', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('signUp');
+    res.render('signup');
 });
 
 router.get('/dashboard', withAuth, async (req, res) => {
