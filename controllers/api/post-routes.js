@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comments} = require('../../models');
+const { Post, User, Comments } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -14,13 +14,13 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+ 
 router.get('/', async (req, res) => {
   try{
-      const PostData = await Post.findAll({
+      const postData = await Post.findAll({
           include: [ Comments, User ]
       });
-      res.status(200).json(PostData);
+      res.status(200).json(postData);
   } catch(err) {
       res.status(500).json(err);
   }
@@ -74,7 +74,7 @@ router.get('/:id', async (req,res) => {
       });
 
       if (!postData) {
-          res.status(500).json({message: 'No Post entry found with that id!'});
+          res.status(500).json({message: 'No post entry found with that id!'});
           return;
       }
       res.status(200).json(postData);
@@ -85,7 +85,7 @@ router.get('/:id', async (req,res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const postData = await post.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -93,7 +93,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: 'No Ppst found with this id!' });
+      res.status(404).json({ message: 'No post found with this id!' });
       return;
     }
 

@@ -10,8 +10,11 @@
     <label for="password-login" class="form-label">Password:</label>
     <input class="form-control" type="password" id="password-login">
   </div>
+  <div id="loginAlert" class="alert alert-warning" role="alert">
+  We couldn't find an account with the details you provided.<br> <a id="signup-promptBtn" class="alert-link" href="/signUp">Sign up for an account here</a> or check your details and try again
+  </div>
   <button class="btn btn-primary" id="loginBtn" type="submit">Login</button>
   <span id="signup-prompt">Don't have an account? <a id="signup-promptBtn2" href="/signUp">Sign Up Here</a></span>
 </form>
 
-<script src="/public/login.js"></script>
+<script src="/login.js"></script>
