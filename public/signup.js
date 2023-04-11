@@ -25,23 +25,23 @@ const signupFormHandler = async (event) => {
   }
 };
 
-const signUpAlert = () => {
-  const signUpAlert = document.querySelector('#signUpAlert');
-  signUpAlert.style.display = 'block';
-}
+// const signUpAlert = () => {
+//   const signUpAlert = document.querySelector('#signUpAlert');
+//   signUpAlert.style.display = 'block';
+// }
 
-const hideSignUpAlert = () => {
-  const signUpAlert = document.querySelector('#signUpAlert');
-  signUpAlert.style.display = 'none';
-}
+// const hideSignUpAlert = () => {
+//   const signUpAlert = document.querySelector('#signUpAlert');
+//   signUpAlert.style.display = 'none';
+// }
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+// document
+//   .querySelector('.signup-form')
+//   .addEventListener('submit', signupFormHandler);
 
-document
-  .querySelector('#signupBtn')
-  .addEventListener('submit', signupFormHandler);
+// document
+//   .querySelector('#signupBtn')
+//   .addEventListener('submit', signupFormHandler);
 
     
   

@@ -1,0 +1,54 @@
+<h2>Dashboard</h2>
+
+<h4>Hi, {{username}}!</h4>
+{{#if posts.length}}
+<h5>You have made {{posts.length}} posts.</h5>
+<p><a href="#post-title">Click here to make another post post</a></p>
+{{else}}
+<h5>You haven't made any posts. Make a new one below!</h5>
+{{/if}}
+
+{{#each posts as |post|}}
+<div class="postCard">
+    <a href="/post/{{post.id}}">
+        <div class="postHeader">
+            <h3 id="postTitle{{post.id}}">{{post.title}}</h3>
+        </div>
+        <p id="postContent{{post.id}}">{{post.content}}</p>
+        <p class="footerText">Created by you on {{ format_date post.date_created}}</p> 
+    </a>
+        <button class="btn btn-primary deletebutton dashboardButtons" data-id="{{post.id}}">Delete post</button>
+        <button class="btn btn-primary updatebutton dashboardButtons" data-id="{{post.id}}">Update post</button>
+        <form id="update-form{{post.id}}" class="form originallyHidden">
+            <div class="form-group update-post-form">
+                <label for="update-post-title">post Title: </label>
+                <input class="title-form-input{{post.id}}" type="text" name="update-post-title" />
+            </div>
+            <div class="form-group">
+                <label for="post-content">Content:</label>
+                <textarea class="content-form-input{{post.id}}" id="update-post-content" name="post-content"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary saveUpdateButton" data-id="{{post.id}}">Update</button>
+            </div>
+    </form>
+  </div>
+</div>
+{{/each}}
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-title">post Title: </label><br>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label><br>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/dashboard.js"></script>
